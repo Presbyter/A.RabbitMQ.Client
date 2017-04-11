@@ -38,7 +38,7 @@ var responseBytes = client.Call(prop, msgBytes, out replyProp);
 1. 返回的结果为Byte数组
 1. 字符编码方式为上面发送消息时所定的 prop.ContentEncoding = "UTF-8";
 1. 序列化方式为上面发送消息时所规定的 prop.ContentType = "application/json";
-1. 其结构请参照接口文档
+1. 其结构为接口文档所描述的返回实体,请参照接口文档
 
 ## 以下为完整参考代码
 ``` csharp
