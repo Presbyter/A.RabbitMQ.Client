@@ -17,7 +17,7 @@ var client = new SimpleRpcClient(channel, "IHousingResource", ExchangeType.Direc
 var request = new RabbitReq();
 request.FunctionName = "GetFieldConfigNode";
 var paras = new Dictionary<string, object> {{"AreaCode", "B400"}};
-request.Parameters = JsonConvert.SerializeObject(paras);
+request.Parameters = paras;
 
 var msgBytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(request));
 var prop = new BasicProperties();
@@ -63,7 +63,7 @@ private static void Main(string[] args)
                 var request = new RabbitReq();
                 request.FunctionName = "GetFieldConfigNode";
                 var paras = new Dictionary<string, object> {{"AreaCode", "B400"}};
-                request.Parameters = JsonConvert.SerializeObject(paras);
+                request.Parameters = paras;
 
                 var msgBytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(request));
                 var prop = new BasicProperties();
