@@ -36,6 +36,9 @@ namespace RabbitMQ.Demo.Publish
                         prop.ContentEncoding = "UTF-8";
 
                         channel.BasicPublish("publish", "", prop, bodyBytes);
+                        channel.ConfirmSelect();
+                        var r = channel.WaitForConfirms();
+                        Console.WriteLine(r ? "发布成功" : "发布失败");
                     }
                 }
             }
